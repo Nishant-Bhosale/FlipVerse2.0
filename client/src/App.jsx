@@ -47,7 +47,7 @@ const App = () => {
 	const [loading, setLoading] = useState(true);
 
 	setTimeout(() => setLoading(false), 1800);
-	console.log(location);
+
 	return (
 		<>
 			<div className="App">
