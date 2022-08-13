@@ -9,7 +9,7 @@ import sellerRouter from "./routes/seller.js";
 import userAuthRouter from "./routes/authRoutes/userAuth.js";
 import sellerAuthRouter from "./routes/authRoutes/sellerAuth.js";
 
-const PORT = 8000 || process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 
@@ -29,6 +29,10 @@ app.use(userAuthRouter);
 app.use(userRouter);
 app.use(sellerRouter);
 app.use(productRouter);
+
+app.get("/", (req, res) => {
+	res.send({ message: "Hello world" });
+});
 
 app.listen(PORT, () => {
 	console.log(`Server running in ${process.env.NODE_ENV} mode on ${PORT}`);
