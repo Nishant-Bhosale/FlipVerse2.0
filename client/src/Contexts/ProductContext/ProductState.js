@@ -106,10 +106,7 @@ const ProductState = (props) => {
 		};
 
 		try {
-			const res = await axios.get(
-				"https://flipverse2-0-backend.herokuapp.com/api/products",
-				config,
-			);
+			const res = await axios.get("/api/products", config);
 			console.log(res);
 			dispatch({ type: GET_ALL_PRODUCTS, payload: res.data });
 		} catch (error) {
